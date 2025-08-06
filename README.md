@@ -126,9 +126,9 @@ Which then lets me navigate to `http://localhost:6006/` (or wherever I tell tens
 </div>
 
 Some notes:
-1. "Execution Summary": I can now immediately see where my iter time is being spent. There are very high proportions of "CPU Exec" and "Memcpy", so the GPU is sitting idle for the majority of each iter!
+1. "Execution Summary": I can now immediately see where my iter time is being spent. There are very high proportions of "CPU Exec" and "Other", so the GPU is sitting idle for the majority of each iter!
 2. "GPU Summary": The poor GPU util can also be seen via the low GPU utilization and SM efficiency
-3. "Step Time Breakdown" We profile for 3 steps. All three have the same kernel time, but the first has much higher CPU and Memcpy time. Looks like initial setup (e.g. moving the model from CPU to GPU) is taking some time.
+3. "Step Time Breakdown" We profile for 3 steps. All three have the same kernel time, but the first has much higher CPU and "Other" time. Looks like initial setup (e.g. moving the model from CPU to GPU) is taking some time.
 
 
 And now for a painstakingly detailed look at measuring GPU efficiency:
